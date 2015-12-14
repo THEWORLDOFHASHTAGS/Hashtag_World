@@ -1,0 +1,94 @@
+body {
+    font-family: AppleGothic;
+    font-size: 16px;
+    background-color: #FFFFFF; 
+    width: auto;
+    height: auto;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 11;
+    background-color: #FF1744;
+    color: white;
+    padding-left: 72px;
+}
+
+.map svg {
+    margin: 55px;
+    height: auto;
+    width: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+}
+
+.map g {
+    fill: #00E676;
+    stroke: #fff;
+    stroke-width: 0.5;
+    /*box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.26);
+    transition: all 0.2s ease-in-out;*/
+}
+
+.map g:hover {
+    /*transform: scale(0.2);*/
+    fill: #69F0AE !important;
+    /*-webkit-tranform: scale(1.1);*/
+    
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.3); /*dim the background*/
+}
+
+.model {
+    /* some styles to position the model at the center of the page */
+    position: fixed;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 2px;
+    width: 40%;
+    height: 50%;
+    background-color: #FFFFFF;
+    color: #F44336;
+    font-style: oblique;
+    text-align: center;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  
+    /* needed styles for the overlay */
+    z-index: 10; /* keep on top of other elements on the page */
+    /*outline: 9999px solid rgba(0,0,0,0.2);*/
+}
+
+.close { 
+    position: absolute;
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+}
+
+.country {
+    position: relative;
+    fill: #00E676;
+    display: block;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+}
+

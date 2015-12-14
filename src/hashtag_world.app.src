@@ -1,0 +1,13 @@
+{application, hashtag_world,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+				  cowboy
+                 ]},
+  {mod, { hashtag_world_app, []}},
+  {env, []}
+ ]}.
