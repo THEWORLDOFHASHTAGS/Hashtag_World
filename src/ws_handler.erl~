@@ -1,7 +1,7 @@
 -module(ws_handler).
 -behaviour(cowboy_websocket_handler).
 -export([init/3, websocket_init/3, websocket_handle/3, websocket_info/3, websocket_terminate/3, connect_db/0]).
--export([list_to_tuplelist/1, count_occurances/2]).
+-export([list_to_tuplelist/1, count_occurances/1, count_occurances/2]).
 -record(state, {}).
 
 init({tcp, http}, _Req, _Opts) ->
