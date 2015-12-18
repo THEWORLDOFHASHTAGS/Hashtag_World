@@ -102,5 +102,5 @@ get_key([H|[]]) ->
 	end;
 get_key([H|T]) ->
 	case H of
-		{Key, _} -> [Key] ++ get_key(T)
+		{Key, _} -> [Key] ++ "," ++ get_key(T)
 	end.

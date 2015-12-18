@@ -284,9 +284,8 @@ var countries = [
         "country_code": "IQ"
     },
 {
-    "country_name": "Iran",
-    "country_code": "IR"
-
+        "country_name": "Iran",
+        "country_code": "IR"
     },
  {
         "country_name": "Ireland",
@@ -656,4 +655,24 @@ var countries = [
         "country_name": "Bangladesh",
         "country_code": "BD"
     },
+{
+        "country_name": "Puerto Rico",
+        "country_code": "PR"
+    },
+{ 
+        "country_name": "Western Sahara",
+        "country_code": "EH"
+    },
+{ 
+        "country_name": "Kashmir",
+        "country_code": "KSH"
+    },
+{
+        "country_name": "Cabinda",
+        "country_code": "CAB",
+
+}
+
+
+
 ];
