@@ -1,16 +1,23 @@
 
 $(function(e) {
     var count;
+    // Loops the country_name and country_code from country_list.json file.
     for (i = 0; i < countries.length; i++) {
         $('#'+countries[i].country_name).data('country', countries[i]);
         $('#'+countries[i].country_code).data('country', countries[i]);
     }
     
-
+    // The when the search-icon is clicked then call function
+    // searchBar().
     $('.search-icon').click(function() {
         searchBar();
     });
     
+    // If the input text does not contain an uppercase then replace it.
+    // Input the text into id in a "g tag" and the append to div map.
+    // Check if the id exists in country_data.
+    // Check if the input is equal to country_name.
+    // Catch error if country_name doesnt exist.
     function searchBar() {
         var inp = document.getElementById('input-id').value; 
         inp = inp.replace(/^(.)|\s(.)/g, function($1){ return $1.toUpperCase( ); });
@@ -36,10 +43,13 @@ $(function(e) {
         }
     }
     
+    // When country has been clicked call the inkRipple() function
+    // passing the g tag clicked on and the mouse cordinates
     $('.map g').click(function(event) {
         count = 0;
         inkRipple(this, event);
     }); 
+    
     
     function inkRipple(el, i) {    
         var parent, ink, k, x, y;
@@ -65,6 +75,12 @@ $(function(e) {
         });
     }
      
+    // Check if the id exists in country_data.
+    // Call the function send() passing the country_code
+    // to the websocket.
+    // Create the new page containing the image of the country
+    // and the hashtag cards to display.
+    // call function createItem() to create hashtag cards.
     function popUp(event) {
         var country_data = $(event).data('country');
         send(country_data.country_code);
@@ -99,10 +115,13 @@ $(function(e) {
     }
     
     
-    
+    // Create a list containing the containing the hashtag.
+    // prepend the to the container ".list".
+    // If the container has more than 10 items then delete
+    // the oldest item.
     window.createItem = function(content) {
         count = count + 1;
-        var holder = '<li id="test">'+content+'</li>';
+        var holder = '<li>'+content+'</li>';
         var list = $('.list li');
         if (list.length > 9) {
             $('.list li:eq(9)').addClass('remove-item').one('animationend', function() {
@@ -120,7 +139,8 @@ $(function(e) {
     }
     
     
-    
+    // When floatB is has been clicked then remove the popUp page
+    // from display.
     $('body').on('click', '.floatB', 'body', function(event) {
 		function clearlist () { 
 			var elem = document.getElementById('mylist');
