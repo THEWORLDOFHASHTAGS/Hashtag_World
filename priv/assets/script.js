@@ -20,7 +20,7 @@ $(function(e) {
     // Catch error if country_name doesnt exist.
     function searchBar() {
         var inp = document.getElementById('input-id').value; 
-        inp = inp.replace(/^(.)|\s(.)/g, function($1){ return $1.toUpperCase( ); });
+        inp = inp.replace(/^(.)|\s(.)/g, function($1){ return $1.toUpperCase( );});
         
         console.log("INPUT "+ inp);
         var test = '<g id="' + inp + '"/>';
@@ -33,13 +33,14 @@ $(function(e) {
         try {
             if (inp == country_data.country_name) {
                 inkRipple('.map #' + inp, event);
-                $('.map #' + inp).remove();
             }
         }
         catch(event) {
-            $('<div class="error-box">'
-              +'<h1 class="search-error">Country not found.</h1>'
-              +'</div>').appendTo('body');
+            alert("Invalid Input.");
+//            $('#input-id').
+//            $('<div class="error-box">'
+//              +'<h1 class="search-error">Country not found.</h1>'
+//              +'</div>').appendTo('body');
         }
     }
     
@@ -82,6 +83,7 @@ $(function(e) {
     // and the hashtag cards to display.
     // call function createItem() to create hashtag cards.
     function popUp(event) {
+        console.log("EVENT "+ event);
         var country_data = $(event).data('country');
         send(country_data.country_code);
         $('body').css({background: '#9C27B0'});
@@ -97,8 +99,8 @@ $(function(e) {
           +'<aside class="tagbox">'
           +'<a class="titletag">Trending Hashtags of '+country_data.country_name+'</a>'
           +'<ul class="list"></ul>'
-          +'<button class="create">Create</button>'
-          +'<button class="remove">Remove</button>'
+          //+'<button class="create">Create</button>'
+          //+'<button class="remove">Remove</button>'
           +'</aside>'
           +'</div>'
           +'</overlay>').appendTo('body');
@@ -149,6 +151,7 @@ $(function(e) {
         inkRevert(event);
         $('body').css({background: '#EFEBE9'});
         $('overlay').remove();
+        
     });
     
     function inkRevert(i) {    

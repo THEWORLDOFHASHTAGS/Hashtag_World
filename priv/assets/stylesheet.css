@@ -63,15 +63,19 @@ body {
     100% {transform: scale(1)}  
 }
 
+/*
 .error-box {
-    opacity: 20%;
+    background-color: rgba(0, 0, 0, 0.5);
     background: black;
     border-radius: 5px;
     position: absolute;
     z-index: 10;
-    margin-top: (100% / 2);
     width: 400px;
     height: 100px;
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .search-error {
@@ -79,6 +83,7 @@ body {
     font-size: 40px;
     color: white;
 }
+*/
 
 h1 {
     margin-top: auto;
@@ -135,7 +140,7 @@ overlay {
 }
 
 overlay.rev-animate {
-     animation: rev-ripple 0.40s ease-in forwards;
+     animation: rev-ripple 0.4s ease-in forwards;
 }
 
 .container:before,
@@ -211,8 +216,7 @@ aside {
 }
 
 .floatB.pop-anima {
-    animation: pop 0.2s ease-in-out;
-    animation-fill-mode: forwards;
+    animation: pop 0.2s ease-in-out forwards;
 }
 
 @keyframes pop {
@@ -224,12 +228,13 @@ aside {
 }
 
 .floatB:hover {
-    animation: touch 0.1s ease-out forwards;
+    background: white;
+    animation: touch 0.4s ease-out forwards;
 }
 
 @keyframes touch {
-    0% {box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);}
-	100% {box-shadow: 0 4px 8px 0 rgba(0, 0.2, 0.2, 0.4);}
+    from {box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);}
+	to {box-shadow: 0 4px 4px 0 rgba(0, 0.2, 0.2, 0.4);}
 }
 
 ink {
