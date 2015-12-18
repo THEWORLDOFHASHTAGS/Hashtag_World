@@ -9,6 +9,9 @@
 %% Application callbacks
 %% ===================================================================
 
+
+%% The server compiles the files in the mentioned directories
+%% after that the localhost http is set to port 8080.
 start(_StartType, _StartArgs) ->
     Dispatch = cowboy_router:compile([
         {'_', [
