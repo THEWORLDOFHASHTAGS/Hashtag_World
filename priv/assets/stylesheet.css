@@ -1,5 +1,10 @@
+@font-face { 
+    font-family: 'AppleGothic'; 
+    src: url('AppleGothic.ttf'); 
+}
+
 body {
-    font-family: AppleGothic;
+    font-family: 'AppleGothic';
     font-size: 16px;
     background-color: #EFEBE9; 
     width: auto;
@@ -86,6 +91,8 @@ body {
 */
 
 h1 {
+    font-family: AppleGothic;
+    font-size: 16px;
     margin-top: auto;
     padding-top: 10px;
     padding-left: 4px;
@@ -180,6 +187,8 @@ aside {
 }
 
 .title {
+    font-family: 'AppleGothic';
+    font-size: 16px;
     position: relative;
     color: #FFC400;
     width: auto;
@@ -188,6 +197,8 @@ aside {
 }
 
 .titletag {
+    font-family: 'AppleGothic';
+    font-size: 16px;
     position: relative;
     color: #FFC400;
     font-size: 20px;
@@ -229,7 +240,7 @@ aside {
 
 .floatB:hover {
     background: white;
-    animation: touch 0.4s ease-out forwards;
+    animation: touch 0.4s linear forwards;
 }
 
 @keyframes touch {

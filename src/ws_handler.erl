@@ -30,13 +30,19 @@ websocket_handle({text, Msg}, Req, State) ->
     {ok, Doc} = open_doc(Msg),
     % get the data stored in the 'tweet' field from the document
     Data = couchbeam_doc:get_value(<<"data">>, Doc),
+	DataTuples = list_to_tuplelist(Data),
+	io:format("Data tuples? ~p~n", [DataTuples]),
 
     %Turn the data into a list of bitstrings listed in descending order of popularity.
     OccuranceList = count_occurances(Data, gb_trees:empty()),
+	io:format("Occurance list: ~p~n", [OccuranceList]),
 	Occurancies = get_occurances(gb_trees:iterator(OccuranceList), []),
+	io:format("Occurancies: ~p~n", [Occurancies]),
 	Popular = lists:sort(fun({KeyA, ValA}, {KeyB, ValB}) -> {ValA, KeyA} >= {ValB, KeyB} end,
 		Occurancies),
+	io:format("Popular: ~p~n", [Popular]),
 	PopList = get_key(Popular),
+	io:format("PopList: ~p~n", [PopList]),
     % send a reply to the website with the data
 	{reply, {text, PopList}, Req, State};
 

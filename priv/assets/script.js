@@ -130,13 +130,13 @@ $(function(e) {
                 $('.list li:eq(9)').remove();
                 holder = $(holder).addClass('show');
                 holder = $(holder).addClass('new-item');
-                $('.list').prepend(holder);
+                $('.list').append(holder);
             });
         }
         else {
             holder = $(holder).addClass('show');
             holder = $(holder).addClass('new-item');
-            $('.list').prepend(holder);
+            $('.list').append(holder);
         }
     }
     
